@@ -1,0 +1,16 @@
+type RegrasNegocio {
+    id: ID!
+    regra: String!
+    range_inicial: String
+    range_final: String
+    tipo: Int
+}
+type Query {
+    regrasnegocios: [RegrasNegocio]!
+    regrasnegocio(id: ID!): RegrasNegocio!
+}
+type Mutation{
+    createRegrasnegocio(id:ID!,regra: String!,range_inicial: String, range_final : String,  tipo: Int ) : RegrasNegocio!
+    updateRegrasnegocio(id:ID!,regra: String!,range_inicial: String, range_final : String,  tipo: Int ): RegrasNegocio!
+    deleteRegrasnegocio(id: ID!): Boolean
+}

@@ -1,0 +1,17 @@
+type RegrasNegocioProduto {
+    id: ID!
+    id_produto: String!
+    id_regra_negocio: String
+    valor: String
+    data_inicio: Int
+    data_fim: Int
+}
+type Query {
+    regrasnegocioprodutos: [RegrasNegocioProduto!]!
+    regrasnegocioproduto(id: ID!): RegrasNegocioProduto!
+}
+type Mutation{
+    createRegranegocioproduto(id:ID!,id_produto: String!, id_regra_negocio: String, valor : String, data_inicio: Int ,data_fim: Int ) : RegrasNegocioProduto!
+    updateRegranegocioproduto(id:ID!,id_produto: String!, id_regra_negocio: String, valor : String, data_inicio: Int ,data_fim: Int  ): RegrasNegocioProduto!
+    deleteRegranegocioproduto(id: ID!): Boolean
+}

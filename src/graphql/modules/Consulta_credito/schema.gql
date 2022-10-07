@@ -1,0 +1,16 @@
+type ConsultaCredito {
+    id:ID!
+    user_id: String!
+    cpf: String!
+    json_response: String!
+    status: Int!
+}
+type Query {
+    consultacreditos: [ConsultaCredito]!
+    consultacredito(id: ID!):ConsultaCredito!
+}
+type Mutation{
+    createConsultacredito(id:ID!,user_id: String!, cpf: String, json_response : String, status: Int ) : ConsultaCredito!
+    updateConsultacredito(id:ID!,user_id: String!, cpf: String, json_response : String, status: Int  ): ConsultaCredito!
+    deleteConsultacredito(id: ID!): Boolean
+}

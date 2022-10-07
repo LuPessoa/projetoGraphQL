@@ -1,0 +1,16 @@
+type Produto {
+    id: ID!
+    produt_o: String!
+    descricao: String
+    banco : String
+    
+}
+type Query {
+    produtos: [Produto]
+    produto(id: ID!): Produto
+}
+type Mutation{
+    createProduto(id:ID!,  produt_o: String!, descricao: String!, banco : String!): Produto
+    updateProduto(id:ID!,  produt_o: String!, descricao: String!, banco : String!): Produto
+    deleteProduto(id: ID!): Boolean
+}

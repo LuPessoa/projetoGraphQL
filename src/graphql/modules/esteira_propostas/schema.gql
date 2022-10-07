@@ -1,0 +1,50 @@
+type EsteiraPropostas {
+    id: ID!
+    user_id: String!
+    id_produto: String
+    id_banco : String
+    id_cliente : String
+    data_abertura: Int
+    n_proposta: String
+    beneficio : String
+    valor : Float
+    valor_liberado : Float
+    n_contrato : String
+    status: String
+}
+type Query {
+    esteirapropostas: [EsteiraPropostas]!
+    esteiraproposta(id: ID!):EsteiraPropostas
+}
+type Mutation{
+    createEsteirapropostas(
+    id:ID!,
+    user_id: String!,
+    id_produto: String,
+    id_banco : String,
+    id_cliente : String,
+    data_abertura: Int, 
+    n_proposta: String,
+    beneficio : String
+    valor : Float
+    valor_liberado : Float
+    n_contrato : String
+    status: String
+    ):EsteiraPropostas
+
+    updateEsteirapropostas(id:ID!,
+    user_id: String!,
+    id_produto: String,
+    id_banco : String,
+    id_cliente : String,
+    data_abertura: Int, 
+    n_proposta: String,
+    beneficio : String
+    valor : Float
+    valor_liberado : Float
+    n_contrato : String
+    status: String
+    ): EsteiraPropostas
+    
+    deleteEsteirapropostas(id: ID!): Boolean
+}

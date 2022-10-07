@@ -1,0 +1,19 @@
+type Api {
+    id: ID!
+    api_name: String!
+    api_host: String
+    api_login : String
+    api_secret: String
+    api_auth_method: String
+    api_call_method: String
+    status : Int
+}
+type Query {
+    apis: [Api]!
+    api(id: ID!):Api!
+}
+type Mutation{
+    createApi(id:ID!, api_name: String!, api_host: String, api_login : String, api_secret: String,  api_auth_method: String,api_call_method: String, status : Int ) : Api
+    updateApi(id:ID!, api_name: String!, api_host: String, api_login : String, api_secret: String,  api_auth_method: String,api_call_method: String, status : Int  ): Api
+    deleteApi(id: ID!): Boolean
+}

@@ -1,0 +1,23 @@
+type Lead {
+    id: ID!
+    nome: String!
+    cpf: String
+    celular : String
+    email: String
+    cidade: String
+    uf: String
+    valor_disponivel: Float
+    idade: Int
+    status: Int
+    canal: String
+
+}
+type Query {
+    leads: [Lead]
+    lead(id: ID!): Lead
+}
+type Mutation{
+    create(id:ID!,nome: String!,cpf: String,celular : String!,email: String,cidade: String,uf: String,valor_disponivel: Float,idade: Int,status: Int, canal: String ) : Lead
+    update(id:ID!,nome: String!,cpf: String,celular : String!,email: String,cidade: String,uf: String,valor_disponivel: Float,idade: Int,status: Int, canal: String ): Lead
+    delete(id: ID!): Boolean
+}
